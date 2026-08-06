@@ -1,7 +1,8 @@
 { pkgs, ... }:
 {
   imports = [
-	  ../packages.nix
+	  ../packages/cli-tools.nix
+    ../packages/editor.nix
 	  ../programs/git.nix
     ../programs/nvim.nix
   ];

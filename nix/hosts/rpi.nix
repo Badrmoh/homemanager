@@ -1,7 +1,9 @@
 { pkgs, ... }:
 {
   imports = [
-	  ../packages.nix
+	  ../packages/build-essentials.nix
+	  ../packages/cli-tools.nix
+    ../packages/editor.nix
     ../programs
   ];
   home.username = "badr";
