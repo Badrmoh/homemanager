@@ -4,6 +4,7 @@
     btop
     bun
     eza
+    fzf
     direnv
     zoxide
     lazydocker

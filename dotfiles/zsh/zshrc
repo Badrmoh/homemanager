@@ -43,11 +43,6 @@ eval "$(zoxide init zsh)"
 # direnv
 eval "$(direnv hook zsh)"
 
-# bun completions
-[ -s "/Users/badrmoh/.bun/_bun" ] && source "/Users/badrmoh/.bun/_bun"
-
-. "$HOME/.atuin/bin/env"
-
 eval "$(atuin init zsh)"
 
 ###############################################################################################################
