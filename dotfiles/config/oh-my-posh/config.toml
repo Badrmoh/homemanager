@@ -41,7 +41,7 @@ final_space = true
   [[blocks.segments]]
     leading_diamond = ''
     trailing_diamond = ''
-    template = ' {{ if .SSHSession }} {{ end }} '
+    template = ' {{ if .SSHSession }}  {{ .HostName }}{{ end }} '
     foreground = 'p:black'
     background = 'p:yellow'
     type = 'session'
@@ -51,7 +51,7 @@ final_space = true
       cache_duration = 'none'
 
   [[blocks.segments]]
-    template = "\n {{ .Path }} "
+    template = "\n {{ .Path }}"
     foreground = 'p:blue'
     background = 'transparent'
     type = 'path'
