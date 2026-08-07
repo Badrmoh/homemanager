@@ -3,8 +3,7 @@
   imports = [
 	  ../packages/cli-tools.nix
     ../packages/editor.nix
-	  ../programs/git.nix
-    ../programs/nvim.nix
+	  ../programs
   ];
   home.username = "badrmoh";
   home.homeDirectory = "/Users/badrmoh";

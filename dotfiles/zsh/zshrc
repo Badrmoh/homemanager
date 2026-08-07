@@ -1,0 +1,74 @@
+if [[ -f "/opt/homebrew/bin/brew" ]] then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
+
+# Initialize oh-my-posh
+eval "$(oh-my-posh init zsh --config $HOME/.config/oh-my-posh/config.toml)"
+
+# ---- underscores are used for better reading, since zsh ignores them anyway
+setopt append_history
+setopt share_history
+setopt hist_ignore_space # ignore commands that start with space. Useful when entring senstive information
+setopt hist_expire_dups_first
+setopt hist_ignore_all_dups
+setopt hist_save_no_dups
+setopt hist_ignore_dups
+setopt hist_verify
+
+eval "$(fzf --zsh)"
+_fzf_compgen_path() {
+  fd --hidden --exclude .git . "$1"
+}
+
+# Use fd to generate the list for directory completion
+_fzf_compgen_dir() {
+  fd --type=d --hidden --exclude .git . "$1"
+}
+_fzf_comprun() {
+  local command=$1
+  show_file_or_dir_preview="if [ -d {} ]; then eza --tree --color=always {} | head -200; else bat -n --color=always --line-range :500 {}; fi"
+  shift
+
+  case "$command" in
+    cd)           fzf --preview 'eza --tree --color=always {} | head -200' "$@" ;;
+    export|unset) fzf --preview "eval 'echo \${}'"         "$@" ;;
+    ssh)          fzf --preview 'dig {}'                   "$@" ;;
+    *)            fzf --preview "$show_file_or_dir_preview" "$@" ;;
+  esac
+}
+
+# ---- Zoxide
+eval "$(zoxide init zsh)"
+
+# direnv
+eval "$(direnv hook zsh)"
+
+# bun completions
+[ -s "/Users/badrmoh/.bun/_bun" ] && source "/Users/badrmoh/.bun/_bun"
+
+. "$HOME/.atuin/bin/env"
+
+eval "$(atuin init zsh)"
+
+###############################################################################################################
+###############################################################################################################
+# Fuzzy-find and foreground a background job
+alias jf='fg %$(jobs | fzf --height 40% --layout=reverse | sed -E "s/^\[([0-9]+)\].*/\1/")'
+
+# Docker
+alias dcu="docker context use"
+alias dcl="docker context list"
+
+# Editors
+alias e="emacsclient -nw"
+alias n="nvim"
+
+alias lg='LAZYGIT_NO_UNSTAGED_INDICATOR=true lazygit'
+
+# Zoxide
+alias cd="z"
+unalias zi 2> /dev/null || true
+
+# Eza
+alias ls="eza"
+
