@@ -1,11 +1,7 @@
 { pkgs, ... }:
 {
-  programs.tmux.enable = true;
-
-  home.file = {
-    ".tmux.conf".source = ../../dotfiles/tmux/tmux.conf;
-    ".tmux.reset.conf".source = ../../dotfiles/tmux/tmux.reset.conf;
-  };
+  home.packages = [ pkgs.tmux ];
+  xdg.configFile."tmux".source = ../../dotfiles/config/tmux;
 }
 
 
