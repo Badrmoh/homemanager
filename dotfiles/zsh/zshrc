@@ -2,6 +2,21 @@ if [[ -f "/opt/homebrew/bin/brew" ]] then
   eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
+# inputrc
+bindkey
+bindkey "^U" backward-kill-line
+bindkey "^u" backward-kill-line
+bindkey "^[l" down-case-word
+bindkey "^[L" down-case-word
+#
+# # alt+<- | alt+->
+bindkey "^[f" forward-word
+bindkey "^[b" backward-word
+#
+# # ctrl+<- | ctrl+->
+bindkey "^[[1;5D" backward-word
+bindkey "^[[1;5C" forward-word
+
 # Initialize oh-my-posh
 eval "$(oh-my-posh init zsh --config $HOME/.config/oh-my-posh/config.toml)"
 
