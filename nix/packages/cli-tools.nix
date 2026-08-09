@@ -2,7 +2,7 @@
 {
   home.packages = with pkgs; [
     btop
-    bun
+    #bun
     eza
     fzf
     direnv

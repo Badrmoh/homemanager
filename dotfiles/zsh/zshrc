@@ -2,8 +2,10 @@ if [[ -f "/opt/homebrew/bin/brew" ]] then
   eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
-# inputrc
-bindkey
+# Force emacs mode before anything hooks ZLE
+bindkey -e
+
+# inputrc-style bindings
 bindkey "^U" backward-kill-line
 bindkey "^u" backward-kill-line
 bindkey "^[l" down-case-word
@@ -16,6 +18,12 @@ bindkey "^[b" backward-word
 # # ctrl+<- | ctrl+->
 bindkey "^[[1;5D" backward-word
 bindkey "^[[1;5C" forward-word
+
+# Initialize atuin BEFORE oh-my-posh — atuin wraps ZLE widgets,
+# and oh-my-posh's transient_prompt also hooks ZLE. This order
+# ensures atuin's wrappers are "inner" and oh-my-posh's are "outer",
+# preventing ZLE widget chain corruption.
+eval "$(atuin init zsh)"
 
 # Initialize oh-my-posh
 eval "$(oh-my-posh init zsh --config $HOME/.config/oh-my-posh/config.toml)"
@@ -58,7 +66,6 @@ eval "$(zoxide init zsh)"
 # direnv
 eval "$(direnv hook zsh)"
 
-eval "$(atuin init zsh)"
 
 ###############################################################################################################
 ###############################################################################################################
