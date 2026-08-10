@@ -89,3 +89,5 @@ unalias zi 2> /dev/null || true
 # Eza
 alias ls="eza"
 
+# Tmux
+alias daily="tmux new -A -s daily"
