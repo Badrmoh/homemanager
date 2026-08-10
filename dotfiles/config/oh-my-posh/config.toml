@@ -51,7 +51,7 @@ final_space = true
       cache_duration = 'none'
 
   [[blocks.segments]]
-    template = "\n {{ .Path }}"
+    template = "\n {{ .Path }} "
     foreground = 'p:blue'
     background = 'transparent'
     type = 'path'

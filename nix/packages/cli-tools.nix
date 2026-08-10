@@ -9,5 +9,6 @@
     zoxide
     lazydocker
     lazygit
+    kubectl
   ];
 }
