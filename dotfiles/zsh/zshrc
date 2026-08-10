@@ -92,4 +92,4 @@ alias ls="eza"
 # Tmux
 alias daily="tmux new -A -s daily"
 
-[[ ! -z ${SSH_SESSION:-} ]] && [[ -z "$TMUX" && -n "$PS1" ]] && daily
+[[ ! -z ${SSH_CONNECTION:-} ]] && [[ -z "$TMUX" && -n "$PS1" ]] && daily
