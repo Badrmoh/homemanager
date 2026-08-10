@@ -8,7 +8,7 @@ path=(
   "$HOME/.config/emacs/bin"
   "$HOME/go/bin"
   "$HOME/.bun/bin"
-  "$HOME/.volta/bin"
+  #"$HOME/.volta/bin"
   $path
 )
 export PATH
