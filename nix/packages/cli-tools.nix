@@ -4,6 +4,7 @@
     btop
     #bun
     volta
+    nodejs_22
     eza
     fzf
     direnv
