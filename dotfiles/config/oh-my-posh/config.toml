@@ -38,17 +38,6 @@ final_space = true
     [blocks.segments.properties]
       cache_duration = 'none'
 
-  [[blocks.segments]]
-    leading_diamond = ''
-    trailing_diamond = ''
-    template = ''
-    foreground = 'p:black'
-    background = 'p:yellow'
-    type = 'session'
-    style = 'diamond'
-
-    [blocks.segments.properties]
-      cache_duration = 'none'
 
   [[blocks.segments]]
     template = "\n {{ .Path }} "
