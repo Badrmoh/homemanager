@@ -2,7 +2,6 @@
 {
   imports = [
 	  ../packages/cli-tools.nix
-    ../modules/bun.nix
     ../packages/editor.nix
 	  ../programs
   ];

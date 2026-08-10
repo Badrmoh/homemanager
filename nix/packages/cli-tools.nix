@@ -3,6 +3,7 @@
   home.packages = with pkgs; [
     btop
     #bun
+    volta
     eza
     fzf
     direnv
