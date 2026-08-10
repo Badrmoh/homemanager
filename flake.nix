@@ -2,12 +2,14 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    nix-ld.url = "github:Mic92/nix-ld";
+    inputs.nix-ld.inputs.nixpkgs.follows = "nixpkgs";
     home-manager = {
       url = "github:nix-community/home-manager/release-26.05";
       inputs.nixpkgs.follows = "nixpkgs";   # same nixpkgs for both
     };
   };
-  outputs = { home-manager, nixpkgs, nixpkgs-unstable, ... }:
+  outputs = { home-manager, nixpkgs, nixpkgs-unstable, nix-ld, ... }:
   let
     mkHome = { system, host }: home-manager.lib.homeManagerConfiguration {
       pkgs = nixpkgs.legacyPackages.${system};
