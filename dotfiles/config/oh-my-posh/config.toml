@@ -38,14 +38,14 @@ final_space = true
     [blocks.segments.properties]
       cache_duration = 'none'
 
-  [[blocks.segments]]
-    leading_diamond = ''
-    trailing_diamond = ''
-    template = ' {{ if .SSHSession }}  {{ .HostName }}{{ end }} '
-    foreground = 'p:black'
-    background = 'p:yellow'
-    type = 'session'
-    style = 'diamond'
+  # [[blocks.segments]]
+  #   leading_diamond = ''
+  #   trailing_diamond = ''
+  #   template = ' {{ if .SSHSession }}  {{ end }} '
+  #   foreground = 'p:black'
+  #   background = 'p:yellow'
+  #   type = 'session'
+  #   style = 'diamond'
 
     [blocks.segments.properties]
       cache_duration = 'none'
