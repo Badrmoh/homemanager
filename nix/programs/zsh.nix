@@ -9,7 +9,7 @@ in
     enableCompletion = true;
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
-    initExtra = zshrc;
+    initContent = zshrc;
     envExtra = zshenv;
   };
 }
