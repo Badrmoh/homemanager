@@ -11,7 +11,7 @@
     lazygit
     uv
     fnm
-    postgresql_15
+    postgresql_16
     kubectl
   ];
 }
