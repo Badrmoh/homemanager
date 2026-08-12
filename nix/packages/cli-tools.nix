@@ -5,7 +5,6 @@
     eza
     fzf
     jq
-    nix-direnv
     zoxide
     lazydocker
     lazygit
