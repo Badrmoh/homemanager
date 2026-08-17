@@ -14,7 +14,7 @@
   #     AddKeysToAgent = "yes";
   #   };
   # };
-  home.packages = with pkgs; [openbao consul-template glab k9s helm rclone awscli kcl];
+  home.packages = with pkgs; [openbao consul-template glab k9s helm rclone awscli kcl at pass];
   home.username = "badr";
   home.homeDirectory = "/home/badr";
   home.stateVersion = "26.05";
