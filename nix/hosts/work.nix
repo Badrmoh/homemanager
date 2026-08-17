@@ -7,6 +7,12 @@
     ../programs
   ];
   services.ssh-agent.enable = true;
+  programs.gpg.enable = true;
+  services.gpg-agent = {
+    enable = true;
+    pinentry.package = pkgs.pinentry-curses;
+  };
+
   # programs.ssh = {
   #   enable = true;
   #   enableDefaultConfig = false;
