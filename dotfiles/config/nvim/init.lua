@@ -18,7 +18,7 @@ require("lazy").setup({
   },
   -- lockfile to a writable location â€” ~/.config is read-only (nix store)
   lockfile = vim.fn.stdpath("state") .. "/lazy-lock.json",
-  install = { colorscheme = { "catppuccin" } },
+  install = { colorscheme = { "tokyonight" } },
 })
 
 require("config")

@@ -1,3 +1,4 @@
--- colorscheme loader â€” catppuccin itself is provided by the lazy spec
--- (lua/lazy-plugins/catppuccin.lua), NOT by vim.pack anymore.
-vim.o.termguicolors = true
+vim.opt.termguicolors = true
+
+-- Keep theme selection here; plugin-specific setup belongs in lazy-plugins/.
+vim.cmd.colorscheme("catppuccin")
